@@ -15,7 +15,6 @@ body {
 .container {
   height: 70vh;
   width: 60vw;
-  border: 4px lime solid;
   margin-left: 15vw;
   padding: 50px;
   display: flex;
@@ -31,7 +30,7 @@ body {
 
 input {
   height: 40px;
-  width: 25vw;
+  min-width: 150px;
   border-radius: 15px;
   border: none;
   outline: none;
@@ -56,7 +55,6 @@ input {
 .list-container {
   height: 50vh;
   width: 50vw;
-  border: 4px lime solid;
   margin-top: 5vh;
   display: flex;
   flex-direction: column;
@@ -69,7 +67,7 @@ input {
   justify-content: space-between;
   align-items: center;
   height: 40px;
-  min-width: 150px;
+  min-width: 300px;
   border-radius: 15px;
   text-align: center;
   margin: 5px;
@@ -77,6 +75,17 @@ input {
   font-size: 2rem;
 }
 
-.deleteBtn {
+textarea {
+  border-style: none;
+  border-color: Transparent;
+  overflow: auto;
+  outline: none;
+}
+
+.deleteBtn, .editBtn, .saveBtn {
   cursor: pointer;
+}
+
+.saveBtn {
+  display: none;
 }/*# sourceMappingURL=style.css.map */

@@ -23,14 +23,43 @@ class GroceryList {
         this.displayItems();
     }
 
+    editItems(i) {
+        const listItem = list.children[i];
+        const item = listItem.querySelector("p");
+
+        item.contentEditable = true;
+        item.focus();
+
+        const editButton = listItem.querySelector(".editBtn"); 
+        const saveButton = listItem.querySelector(".saveBtn"); 
+
+        editButton.style.display = "none";
+        saveButton.style.display = "inline-block";
+    }
+
+    saveItem(i) {
+        const listItem = list.children[i];
+        const item = listItem.querySelector("p");
+        itemsArray[i] = item.textContent.trim();
+        localStorage.setItem("items", JSON.stringify(itemsArray));
+        this.displayItems();
+    }
+
     displayItems() {
+        const list = document.querySelector(".list"); 
+
         let items = "";
         for (let i = 0; i < itemsArray.length; i++) {
             items += `<li class="item">
                 <p>${itemsArray[i]}</p>
+                <div>
+                <i class="fa-solid fa-floppy-disk saveBtn"></i>
+                <i class="fa-solid fa-pen-to-square editBtn"></i>
                 <i class="fa-regular fa-square-check deleteBtn"></i>
+                </div>
             </li>`;
         }
+
         list.innerHTML = items;
     }
 
@@ -56,15 +85,34 @@ list.addEventListener('click', (e) => {
         app.deleteItem(itemIndex);
         location.reload()
     }
+
+    if (e.target.classList.contains("editBtn")) {
+        const listItem = e.target.closest("li");
+        const itemIndex = Array.from(list.children).indexOf(listItem);
+        app.editItems(itemIndex);
+
+        const editButton = listItem.querySelector(".editBtn"); // Select the edit button within the listItem
+        const saveButton = listItem.querySelector(".saveBtn"); // Select the save button within the listItem
+
+        editButton.style.display = "none";
+        saveButton.style.display = "inline-block";
+    }
 });
 
 window.onload = function() {
     app.displayItems()
-    }
+    const saveButtons = document.querySelectorAll(".saveBtn");
+    saveButtons.forEach((saveButton) => {
+        saveButton.style.display = "none";
+    });
+}
 
 input.addEventListener("keypress", function(e) {
-        if (e.key === "Enter") {
-            e.preventDefault();
-            addButton.click();
-        }
+    if (e.key === "Enter") {
+        e.preventDefault();
+        addButton.click();
+    }
 });
+
+
+
