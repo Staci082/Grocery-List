@@ -45,6 +45,14 @@ class GroceryList {
         this.displayItems();
     }
 
+    hideSaveBtn() {
+        const saveButtons = document.querySelectorAll(".saveBtn");
+        saveButtons.forEach((saveButton) => {
+        saveButton.style.display = "none";
+    });
+
+    }
+
     displayItems() {
         const list = document.querySelector(".list"); 
 
@@ -91,20 +99,24 @@ list.addEventListener('click', (e) => {
         const itemIndex = Array.from(list.children).indexOf(listItem);
         app.editItems(itemIndex);
 
-        const editButton = listItem.querySelector(".editBtn"); // Select the edit button within the listItem
-        const saveButton = listItem.querySelector(".saveBtn"); // Select the save button within the listItem
+        const editButton = listItem.querySelector(".editBtn"); 
+        const saveButton = listItem.querySelector(".saveBtn"); 
 
         editButton.style.display = "none";
         saveButton.style.display = "inline-block";
+    }
+
+    if (e.target.classList.contains("saveBtn")) {
+        const listItem = e.target.closest("li");
+        const itemIndex = Array.from(list.children).indexOf(listItem);
+        app.saveItem(itemIndex);
+        app.hideSaveBtn()
     }
 });
 
 window.onload = function() {
     app.displayItems()
-    const saveButtons = document.querySelectorAll(".saveBtn");
-    saveButtons.forEach((saveButton) => {
-        saveButton.style.display = "none";
-    });
+    app.hideSaveBtn()
 }
 
 input.addEventListener("keypress", function(e) {
