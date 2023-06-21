@@ -66,28 +66,17 @@ input {
 
 .item {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   height: 40px;
-  width: auto;
+  min-width: 150px;
   border-radius: 15px;
-  border: deeppink 2px solid;
+  text-align: center;
   margin: 5px;
   list-style: none;
   font-size: 2rem;
 }
 
-.remove-btn {
-  height: 40px;
-  width: 20px;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  background: rgb(17, 210, 214);
-  color: white;
-  border: none;
-  padding: 1rem;
+.deleteBtn {
   cursor: pointer;
-  flex: 1;
-}
-
-.fa-trash {
-  pointer-events: none;
 }/*# sourceMappingURL=style.css.map */
