@@ -18,14 +18,13 @@ body {
     );
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 
 .container {
     height: 70vh;
     width: 60vw;
-    margin-left: 15vw;
-    padding: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,7 +38,7 @@ body {
 
 input {
     height: 40px;
-    min-width: 150px;
+    width: 200px;
     border-radius: 15px;
     border: none;
     outline: none;
@@ -62,12 +61,11 @@ input {
 }
 .list-container {
     height: 50vh;
-    width: 50vw;
+    width: 30vw;
     margin-top: 5vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-
     font-size: 1.5rem;
 }
 
@@ -76,7 +74,7 @@ input {
     justify-content: space-between;
     align-items: center;
     height: 40px;
-    min-width:  300px;
+    width:  250px;
     border-radius: 15px;
     text-align: center;
     margin: 5px;
