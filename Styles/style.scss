@@ -38,7 +38,7 @@ body {
 
 input {
     height: 45px;
-    width: 200px;
+    width: 250px;
     border-radius: 15px;
     border: none;
     outline: none;
@@ -80,17 +80,17 @@ input {
 
 .item {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     height: 40px;
-    width:  250px;
+    width:  autopo;
     border-radius: 15px;
     text-align: center;
-    margin: 5px;
+    margin: 2vh;
     list-style: none;
     font-size: 2rem;
     p {
         padding: 0  15px;
+        margin-left: 1vw;
     }
 }
 
@@ -144,7 +144,7 @@ i:hover {
 }
 .add-item-title {
     top: 5vh;
-    width: 250px;
+    width: 300px;
     background: $darkblue;
     font-size: 2.5rem;
 }

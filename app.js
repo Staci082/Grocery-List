@@ -61,12 +61,12 @@ class GroceryList {
         let items = ""; // starting with an emtpy string to further be able to add dom content
         for (let i = 0; i < itemsArray.length; i++) {  // adding each item in the storage list to the html content
             items += `<li class="item">
-                <p>${itemsArray[i]}</p>
                 <div>
                 <i class="fa-solid fa-floppy-disk saveBtn"></i>
                 <i class="fa-regular fa-pen-to-square editBtn"></i>
                 <i class="fa-regular fa-square-check deleteBtn"></i>
                 </div>
+                <p>${itemsArray[i]}</p>
             </li>`;
         }
 
