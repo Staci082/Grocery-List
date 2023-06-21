@@ -4,6 +4,11 @@
 $shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 $darkblue: rgb(17, 210, 214);
+$darkgrey: rgb(27, 61, 80);
+
+$yellow-background: linear-gradient(327deg, rgb(17, 210, 214, 0.3) 45%, rgba(255,255,255, 0.5) 100%);
+$pink-background: linear-gradient(327deg, rgba(245, 189, 242, 0.5) 45%, rgba(255,255,255,0.5) 100%);
+$green-background: linear-gradient(327deg, rgba(159,255,162,0.5) 45%, rgba(255,255,255,.5) 100%);
 
 * {
     margin: 0;
@@ -72,7 +77,7 @@ input {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color:rgb(27, 61, 80);
+    color:$darkgrey;
     font-size: 1.5rem;
     font-weight: bold;
     font-family: "Indie Flower", "comic Sans";
@@ -82,7 +87,7 @@ input {
     display: flex;
     align-items: center;
     height: 40px;
-    width:  autopo;
+    width:  auto;
     border-radius: 15px;
     text-align: center;
     margin: 2vh;
@@ -111,7 +116,7 @@ i:hover {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
-    gap: 3vh;
+    gap: 5vh;
     width: 30vw;
     height: 90vh;
     padding: 5vh 10vw;
@@ -119,12 +124,14 @@ i:hover {
 
 .sorted {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; 
+    align-items:center;
     width: 300px;
     height: auto;
-    border: rgb(130, 130, 130) solid 1px;
     border-radius: 10px;
-    display: flex;
-    justify-content: center;
+    box-shadow: $shadow;
 }
 
 .title {
@@ -151,25 +158,37 @@ i:hover {
 .meat-fish {
     grid-column: 1/2;
     grid-row: 1/2;
+    background: $pink-background;
 }
 .produce {
     grid-column: 1/2;
     grid-row: 2/4;
+    background: $green-background;
 }
 .other {
     grid-column: 1/2;
     grid-row: 4/5;
+    background: $yellow-background;
 }
 .household {
     grid-column: 2/3;
     grid-row: 1/2;
+    background: $green-background;
 }
 .frozen {
     grid-column: 2/3;
     grid-row: 2/3;
+    background: $yellow-background;
 }
 .dry-goods {
     grid-column: 2/3;
     grid-row: 3/5;
+    background: $pink-background;
 }
 
+.line {
+    padding-top: 2vh;
+    border-bottom: $darkgrey 2px dotted;
+    height: 5px;
+    width: 270px;
+}
