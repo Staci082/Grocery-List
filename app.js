@@ -2,6 +2,7 @@ const input = document.querySelector("#input");
 const addButton = document.querySelector(".add-button");
 const list = document.querySelector(".list");
 
+// storage list
 const itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : []
 
 console.log(itemsArray)
@@ -12,13 +13,15 @@ class GroceryList {
     }
 
     createItem() {
-        itemsArray.push(input.value);
+        if (input.value !== '') {  // won't send if there is no input
+        itemsArray.push(input.value);  // adding input to storage list
         this.updateLocalStorage();
         this.displayItems();
+        }
     }
 
     deleteItem(i) {
-        itemsArray.splice(i, 1);
+        itemsArray.splice(i, 1);  //  removing just this one item from storage list
         this.updateLocalStorage();
         this.displayItems();
     }

@@ -40,6 +40,9 @@ input {
 }
 
 .add-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
   height: 40px;
   width: 40px;
