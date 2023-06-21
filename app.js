@@ -60,17 +60,17 @@ class GroceryList {
     displayItems() {
         let items = ""; // starting with an emtpy string to further be able to add dom content
         for (let i = 0; i < itemsArray.length; i++) {  // adding each item in the storage list to the html content
-            items += `<li class="item">
+            items  += `
+            <li class="item" id="${itemsArray[i]}" draggable="true" ondragstart="dragstart_handler(event)">
                 <div>
-                <i class="fa-solid fa-floppy-disk saveBtn"></i>
-                <i class="fa-regular fa-pen-to-square editBtn"></i>
-                <i class="fa-regular fa-square-check deleteBtn"></i>
+                    <i class="fa-solid fa-floppy-disk saveBtn"></i>
+                    <i class="fa-regular fa-pen-to-square editBtn"></i>
+                    <i class="fa-regular fa-square-check deleteBtn"></i>
                 </div>
                 <p>${itemsArray[i]}</p>
             </li>`;
         }
-
-        list.innerHTML = items;  
+        list.innerHTML = items;
     }
 
     updateLocalStorage() {
@@ -129,3 +129,26 @@ input.addEventListener("keypress", function(e) {
 
 
 
+// DRAGGING & DROPPING MECHANISMS
+
+let lines = document.querySelectorAll(".line")
+lines.forEach(function(line) {
+    line.setAttribute("ondrop", "drop_handler(event)")
+    line.setAttribute("ondragover", "dragover_handler(event)")
+})
+
+function dragstart_handler(ev) {
+    // Add the target element's id to the data transfer object
+    ev.dataTransfer.setData("application/my-app", ev.target.id);
+    ev.dataTransfer.effectAllowed = "move";
+  }
+  function dragover_handler(ev) {
+    ev.preventDefault();
+    ev.dataTransfer.dropEffect = "move";
+  }
+  function drop_handler(ev) {
+    ev.preventDefault();
+    // Get the id of the target and add the moved element to the target's DOM
+    const data = ev.dataTransfer.getData("application/my-app");
+    ev.target.appendChild(document.getElementById(data));
+  }
