@@ -10,6 +10,11 @@ $yellow-background: linear-gradient(327deg, rgb(17, 210, 214, 0.3) 45%, rgba(255
 $pink-background: linear-gradient(327deg, rgba(245, 189, 242, 0.5) 45%, rgba(255,255,255,0.5) 100%);
 $green-background: linear-gradient(327deg, rgba(159,255,162,0.5) 45%, rgba(255,255,255,.5) 100%);
 
+@mixin font {
+    font-family: "Indie Flower", "comic Sans";
+    font-weight: bold;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -48,10 +53,8 @@ input {
     border: none;
     outline: none;
     text-align: center;
-    font-size: 1.5rem;
     box-shadow: $shadow;
-    font-family: "Indie Flower", "comic Sans";
-    font-weight: bold;
+    @include font;
     font-size: 2rem;
 }
 
@@ -79,8 +82,7 @@ input {
     align-items: center;
     color:$darkgrey;
     font-size: 1.5rem;
-    font-weight: bold;
-    font-family: "Indie Flower", "comic Sans";
+    @include font;
 }
 
 .item {
@@ -111,6 +113,23 @@ i:hover {
 .saveBtn {
     display: none;
 }
+
+.drag-me {
+    position: absolute;
+    display: flex;
+    left: 4vw;
+    bottom: 10vh;
+    font-size: 1.2rem;
+    color: $darkblue;
+    @include font;
+}
+img {
+    position: absolute;
+    height: 8vh;
+    left: 5vw;
+    bottom: 13vh;
+    }
+
 
 .right-container {
     display: grid;

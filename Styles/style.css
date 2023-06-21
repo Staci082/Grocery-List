@@ -33,7 +33,6 @@ input {
   border: none;
   outline: none;
   text-align: center;
-  font-size: 1.5rem;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   font-family: "Indie Flower", "comic Sans";
   font-weight: bold;
@@ -65,8 +64,8 @@ input {
   align-items: center;
   color: rgb(27, 61, 80);
   font-size: 1.5rem;
-  font-weight: bold;
   font-family: "Indie Flower", "comic Sans";
+  font-weight: bold;
 }
 
 .item {
@@ -95,6 +94,24 @@ i:hover {
 
 .saveBtn {
   display: none;
+}
+
+.drag-me {
+  position: absolute;
+  display: flex;
+  left: 4vw;
+  bottom: 10vh;
+  font-size: 1.2rem;
+  color: rgb(17, 210, 214);
+  font-family: "Indie Flower", "comic Sans";
+  font-weight: bold;
+}
+
+img {
+  position: absolute;
+  height: 8vh;
+  left: 5vw;
+  bottom: 13vh;
 }
 
 .right-container {
