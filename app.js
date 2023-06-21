@@ -30,20 +30,20 @@ class GroceryList {
         const listItem = list.children[i];
         const item = listItem.querySelector("p");
 
-        item.contentEditable = true;
-        item.focus();
+        item.contentEditable = true;  // making it possible to edit item text
+        item.focus();  // highlights the editable item text
 
         const editButton = listItem.querySelector(".editBtn"); 
         const saveButton = listItem.querySelector(".saveBtn"); 
 
-        editButton.style.display = "none";
-        saveButton.style.display = "inline-block";
+        editButton.style.display = "none";  // hiding edit button
+        saveButton.style.display = "inline-block";  // displaying save button
     }
 
     saveItem(i) {
-        const listItem = list.children[i];
+        const listItem = list.children[i];  
         const item = listItem.querySelector("p");
-        itemsArray[i] = item.textContent.trim();
+        itemsArray[i] = item.textContent.trim();  // returns the updated string
         this.updateLocalStorage();
         this.displayItems();
         this.hideSaveBtn();
@@ -58,8 +58,8 @@ class GroceryList {
     }
 
     displayItems() {
-        let items = "";
-        for (let i = 0; i < itemsArray.length; i++) {
+        let items = ""; // starting with an emtpy string to further be able to add dom content
+        for (let i = 0; i < itemsArray.length; i++) {  // adding each item in the storage list to the html content
             items += `<li class="item">
                 <p>${itemsArray[i]}</p>
                 <div>
