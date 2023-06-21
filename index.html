@@ -3,7 +3,7 @@
 <link>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Grocery List</title>
     <link rel="stylesheet" href="./Styles/style.css" />
     <link
       rel="stylesheet"
@@ -14,9 +14,9 @@
     />
 </head>
 <body>
-    <div class="background-container">
-    <div class="container">
 
+    <div class="left-container">
+        <div class="title add-item-title">Grocery List</div>
 
         <div class="input-container">
             <input id="input" type="text"/>
@@ -28,10 +28,17 @@
         <div class="list-container">
             <ul class="list"></ul>
         </div>
-    
-    
     </div>
-</div>
+
+    <div class="right-container">
+        <div class="sorted meat-fish"><div class="title">MEAT & FISH</div></div>
+        <div class="sorted produce"><div class="title">PRODUCE</div></div>
+        <div class="sorted dry-goods"><div class="title">DRY GOODS</div></div>
+        <div class="sorted frozen"><div class="title">FROZEN</div></div>
+        <div class="sorted household"><div class="title">HOUSEHOLD</div></div>
+        <div class="sorted other"><div class="title">OTHER</div></div>
+    </div>
+
 
 
 <script src="./app.js"></script>

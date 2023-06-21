@@ -1,22 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap");
 * {
   margin: 0;
   padding: 0;
 }
 
 body {
-  width: 100vw;
-  min-height: 100vh;
+  display: flex;
+  justify-content: space-around;
   background: rgb(177, 238, 239);
   background: linear-gradient(347deg, rgb(177, 238, 239) 56%, rgb(248, 249, 246) 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.container {
-  height: 70vh;
-  width: 60vw;
+.left-container {
+  height: 100vh;
+  width: 20vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,7 +27,7 @@ body {
 }
 
 input {
-  height: 40px;
+  height: 45px;
   width: 200px;
   border-radius: 15px;
   border: none;
@@ -37,6 +35,9 @@ input {
   text-align: center;
   font-size: 1.5rem;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  font-family: "Indie Flower", "comic Sans";
+  font-weight: bold;
+  font-size: 2rem;
 }
 
 .add-button {
@@ -44,7 +45,7 @@ input {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  height: 40px;
+  height: 45px;
   width: 40px;
   border: none;
   background: white;
@@ -80,6 +81,9 @@ input {
   list-style: none;
   font-size: 2rem;
 }
+.item p {
+  padding: 0 15px;
+}
 
 i:hover {
   color: rgb(17, 210, 214);
@@ -91,4 +95,50 @@ i:hover {
 
 .saveBtn {
   display: none;
+}
+
+.right-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 60vw;
+  height: 100vh;
+}
+
+.sorted {
+  position: relative;
+  width: 300px;
+  height: 20vh;
+  border: rgb(130, 130, 130) solid 1px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -27px;
+  height: auto;
+  width: 130px;
+  padding: 3px 0px;
+  background: rgb(235, 229, 75);
+  border-radius: 8%;
+  font-family: "Amatic SC";
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.add-item-title {
+  top: 5vh;
+  width: 250px;
+  background: rgb(17, 210, 214);
+  font-size: 2.5rem;
+}
+
+.produce {
+  height: 30vh;
 }/*# sourceMappingURL=style.css.map */

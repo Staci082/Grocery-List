@@ -70,7 +70,7 @@ class GroceryList {
             </li>`;
         }
 
-        list.innerHTML = items;
+        list.innerHTML = items;  
     }
 
     updateLocalStorage() {
