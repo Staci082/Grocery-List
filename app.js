@@ -111,6 +111,7 @@ list.addEventListener('click', (e) => {
         const itemIndex = Array.from(list.children).indexOf(listItem);
         app.saveItem(itemIndex);
         app.hideSaveBtn()
+        location.reload()
     }
 });
 
