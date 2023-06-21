@@ -13,13 +13,13 @@ class GroceryList {
 
     createItem() {
         itemsArray.push(input.value);
-        localStorage.setItem('items', JSON.stringify(itemsArray));
+        this.updateLocalStorage();
         this.displayItems();
     }
 
     deleteItem(i) {
         itemsArray.splice(i, 1);
-        localStorage.setItem("items", JSON.stringify(itemsArray));
+        this.updateLocalStorage();
         this.displayItems();
     }
 
@@ -41,8 +41,9 @@ class GroceryList {
         const listItem = list.children[i];
         const item = listItem.querySelector("p");
         itemsArray[i] = item.textContent.trim();
-        localStorage.setItem("items", JSON.stringify(itemsArray));
+        this.updateLocalStorage();
         this.displayItems();
+        this.hideSaveBtn();
     }
 
     hideSaveBtn() {
@@ -54,8 +55,6 @@ class GroceryList {
     }
 
     displayItems() {
-        const list = document.querySelector(".list"); 
-
         let items = "";
         for (let i = 0; i < itemsArray.length; i++) {
             items += `<li class="item">
@@ -69,6 +68,10 @@ class GroceryList {
         }
 
         list.innerHTML = items;
+    }
+
+    updateLocalStorage() {
+        localStorage.setItem("items", JSON.stringify(itemsArray));
     }
 
 }
@@ -85,32 +88,26 @@ addButton.addEventListener('click', (e) => {
 
 list.addEventListener('click', (e) => {
     e.preventDefault();
+    const listItem = e.target.closest("li");
+    const itemIndex = Array.from(list.children).indexOf(listItem);
 
     if (e.target.classList.contains('deleteBtn')) {
-        const listItem = e.target.closest('li');
-        const itemIndex = Array.from(list.children).indexOf(listItem);
         listItem.remove();
         app.deleteItem(itemIndex);
         location.reload()
     }
 
     if (e.target.classList.contains("editBtn")) {
-        const listItem = e.target.closest("li");
-        const itemIndex = Array.from(list.children).indexOf(listItem);
-        app.editItems(itemIndex);
-
         const editButton = listItem.querySelector(".editBtn"); 
         const saveButton = listItem.querySelector(".saveBtn"); 
 
+        app.editItems(itemIndex);
         editButton.style.display = "none";
         saveButton.style.display = "inline-block";
     }
 
     if (e.target.classList.contains("saveBtn")) {
-        const listItem = e.target.closest("li");
-        const itemIndex = Array.from(list.children).indexOf(listItem);
         app.saveItem(itemIndex);
-        app.hideSaveBtn()
         location.reload()
     }
 });
