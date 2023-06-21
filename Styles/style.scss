@@ -1,0 +1,102 @@
+$shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+$darkblue: rgb(17, 210, 214);
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    background: rgb(177, 238, 239);
+    background: linear-gradient(
+        347deg,
+        rgba(177, 238, 239, 1) 56%,
+        rgba(248, 249, 246, 1) 100%
+    );
+    display: flex;
+    align-items: center;
+}
+
+
+.container {
+    height: 70vh;
+    width: 60vw;
+    border: 4px lime solid;
+    margin-left: 15vw;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+
+}
+
+input {
+    height: 40px;
+    width: 25vw;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    text-align: center;
+    font-size: 1.5rem;
+    box-shadow: $shadow;
+}
+
+.add-button {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    border: none;
+    background: white;
+    color: $darkblue;
+    box-shadow: $shadow;
+    margin-left: 1vw;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.list-container {
+    height: 50vh;
+    width: 50vw;
+    border: 4px lime solid;
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.item {
+    display: flex;
+    height: 40px;
+    width: auto;
+    border-radius: 15px;
+    border: deeppink 2px solid;
+    margin: 5px;
+    list-style: none;
+    font-size: 2rem;
+}
+
+
+.remove-btn {
+    height: 40px;
+    width: 20px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: $darkblue;
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    flex: 1;
+}
+.fa-trash {
+    pointer-events: none;
+}
