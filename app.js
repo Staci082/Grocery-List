@@ -60,7 +60,7 @@ class GroceryList {
     displayItems() {
         let items = ""; // starting with an emtpy string to further be able to add dom content
         for (let i = 0; i < itemsArray.length; i++) {  // adding each item in the storage list to the html content
-            items  += `
+            const draggableItem = `
             <li class="item" id="${itemsArray[i]}" draggable="true" ondragstart="dragstart_handler(event)">
                 <div>
                     <i class="fa-solid fa-floppy-disk saveBtn"></i>
@@ -69,8 +69,9 @@ class GroceryList {
                 </div>
                 <p>${itemsArray[i]}</p>
             </li>`;
+        items += draggableItem;
         }
-        list.innerHTML = items;
+        list.innerHTML = items
     }
 
     updateLocalStorage() {

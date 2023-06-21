@@ -134,7 +134,10 @@ i:hover {
     box-shadow: $shadow;
     font-family: "Indie Flower", "comic Sans";
     color:$darkgrey;
-    font-size: 1rem;
+    font-size: .8rem;
+    i {
+    font-size: 1.5rem;
+    }
 }
 
 .title {
