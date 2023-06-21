@@ -7,14 +7,14 @@
 
 body {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   background: rgb(177, 238, 239);
   background: linear-gradient(347deg, rgb(177, 238, 239) 56%, rgb(248, 249, 246) 100%);
 }
 
 .left-container {
   height: 100vh;
-  width: 40vw;
+  width: 50vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -119,9 +119,9 @@ img {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   gap: 5vh;
-  width: 30vw;
+  width: 40vw;
   height: 90vh;
-  padding: 5vh 10vw;
+  padding: 5vh 15vw 5vh 0vw;
 }
 
 .sorted {
@@ -130,7 +130,7 @@ img {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  width: 300px;
+  width: 400px;
   height: auto;
   border-radius: 10px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
@@ -205,5 +205,5 @@ img {
   padding-top: 2vh;
   border-bottom: rgb(27, 61, 80) 2px dotted;
   height: 5px;
-  width: 270px;
+  width: 350px;
 }/*# sourceMappingURL=style.css.map */
