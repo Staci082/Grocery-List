@@ -87,6 +87,9 @@ input {
     font-size: 2rem;
 }
 
+i:hover {
+    color:$darkblue;
+}
 
 .deleteBtn, .editBtn, .saveBtn {
     cursor: pointer;

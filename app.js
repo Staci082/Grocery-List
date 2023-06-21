@@ -62,7 +62,7 @@ class GroceryList {
                 <p>${itemsArray[i]}</p>
                 <div>
                 <i class="fa-solid fa-floppy-disk saveBtn"></i>
-                <i class="fa-solid fa-pen-to-square editBtn"></i>
+                <i class="fa-regular fa-pen-to-square editBtn"></i>
                 <i class="fa-regular fa-square-check deleteBtn"></i>
                 </div>
             </li>`;

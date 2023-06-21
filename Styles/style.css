@@ -78,6 +78,10 @@ input {
   font-size: 2rem;
 }
 
+i:hover {
+  color: rgb(17, 210, 214);
+}
+
 .deleteBtn, .editBtn, .saveBtn {
   cursor: pointer;
 }
