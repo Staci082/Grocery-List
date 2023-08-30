@@ -88,7 +88,9 @@ i:hover {
   color: rgb(17, 210, 214);
 }
 
-.deleteBtn, .editBtn, .saveBtn {
+.deleteBtn,
+.editBtn,
+.saveBtn {
   cursor: pointer;
 }
 
@@ -124,7 +126,7 @@ img {
   padding: 5vh 15vw 5vh 0vw;
 }
 
-.sorted {
+.grocery-list {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -138,7 +140,7 @@ img {
   color: rgb(27, 61, 80);
   font-size: 0.8rem;
 }
-.sorted i {
+.grocery-list i {
   font-size: 1.5rem;
 }
 
